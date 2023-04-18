@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
+    "dev": "parcel src/index.html",
+    "build": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,11 @@
   "homepage": "https://github.com/Yulia097/goit-js-hw-08#readme",
   "dependencies": {
     "@vimeo/player": "^2.18.0",
+    "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
     "simplelightbox": "^2.13.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
   }
 }

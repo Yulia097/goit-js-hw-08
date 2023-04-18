@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"84v0Q":[function(require,module,exports) {
+})({"lhSlO":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -560,16 +560,17 @@ function hmrAccept(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _player = require("@vimeo/player");
 var _playerDefault = parcelHelpers.interopDefault(_player);
+var _lodash = require("lodash");
 const iframe = document.querySelector("iframe");
-const player = new Vimeo.Player(iframe);
-player.on("timeupdate ", function() {
-    console.log("played the video!");
-});
-player.getVideoTitle().then(function(title) {
-    console.log("title:", title);
-});
+const player = new (0, _playerDefault.default)(iframe);
+console.log(player);
+player.on("timeupdate", (0, _lodash.throttle)(function(data) {
+    localStorage.setItem("videoplayer-current-time", data.seconds);
+}, 1000));
+const savedTime = localStorage.getItem("videoplayer-current-time");
+if (savedTime) player.setCurrentTime(savedTime);
 
-},{"@vimeo/player":"kmmUG","@parcel/transformer-js/src/esmodule-helpers.js":"ajlmC"}],"kmmUG":[function(require,module,exports) {
+},{"@vimeo/player":"kmmUG","lodash":"3qBDj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kmmUG":[function(require,module,exports) {
 /*! @vimeo/player v2.18.0 | (c) 2022 Vimeo | MIT License | https://github.com/vimeo/player.js */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var global = arguments[3];
@@ -2005,7 +2006,7 @@ if (!isNode) {
 }
 exports.default = Player;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ajlmC"}],"ajlmC":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -2035,6 +2036,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["84v0Q","fFZ34"], "fFZ34", "parcelRequire4c75")
+},{}]},["lhSlO","fFZ34"], "fFZ34", "parcelRequire4c75")
 
 //# sourceMappingURL=02-video.a74b541c.js.map

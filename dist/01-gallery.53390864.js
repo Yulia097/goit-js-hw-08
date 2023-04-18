@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"2R6QA":[function(require,module,exports) {
+})({"9VJAZ":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -558,13 +558,14 @@ function hmrAccept(bundle, id) {
 
 },{}],"6XVkV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _galleryItemsJs = require("./gallery-items.js");
 var _simplelightbox = require("simplelightbox");
 var _simplelightboxDefault = parcelHelpers.interopDefault(_simplelightbox);
 var _simpleLightboxMinCss = require("simplelightbox/dist/simple-lightbox.min.css");
-var _galleryItemsJs = require("./gallery-items.js");
 // Change code below this line
 const galleryList = document.querySelector(".gallery");
 const cardsMarkup = listOfItems((0, _galleryItemsJs.galleryItems));
+console.log((0, _galleryItemsJs.galleryItems));
 galleryList.insertAdjacentHTML("beforeend", cardsMarkup);
 function listOfItems(galleryItems) {
     return galleryItems.map(({ preview , original , description  })=>{
@@ -585,14 +586,95 @@ var lightbox = new (0, _simplelightboxDefault.default)(".gallery a", {
     captionsData: "alt",
     captionDelay: 250
 });
-console.log((0, _galleryItemsJs.galleryItems));
 
-},{"simplelightbox":"9ydBq","simplelightbox/dist/simple-lightbox.min.css":"kaxSc","@parcel/transformer-js/src/esmodule-helpers.js":"ajlmC","./gallery-items.js":"9C7dK"}],"9ydBq":[function(require,module,exports) {
+},{"./gallery-items.js":"9C7dK","simplelightbox":"9ydBq","simplelightbox/dist/simple-lightbox.min.css":"kaxSc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9C7dK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "galleryItems", ()=>galleryItems);
+const galleryItems = [
+    {
+        preview: "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg",
+        original: "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg",
+        description: "Hokkaido Flower"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg",
+        description: "Container Haulage Freight"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg",
+        description: "Aerial Beach View"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg",
+        description: "Flower Blooms"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg",
+        description: "Alpine Mountains"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg",
+        description: "Mountain Lake Sailing"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
+        description: "Alpine Spring Meadows"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
+        description: "Nature Landscape"
+    },
+    {
+        preview: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg",
+        original: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
+        description: "Lighthouse Coast Sea"
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"9ydBq":[function(require,module,exports) {
 /*!
 	By André Rinas, www.andrerinas.de
-	Documentation, www.simplelightbox.de
+	Documentation, www.simplelightbox.com
 	Available for use under the MIT License
-	Version 2.12.1
+	Version 2.13.0
 */ var global = arguments[3];
 "use strict";
 Object.defineProperty(exports, "__esModule", {
@@ -888,7 +970,8 @@ var SimpleLightbox = /*#__PURE__*/ function() {
             if (_this.isAnimating && event.key === "Escape") {
                 _this.currentImage.setAttribute("src", "");
                 _this.isAnimating = false;
-                return _this.close();
+                _this.close();
+                return;
             }
             if (_this.isOpen) {
                 event.preventDefault();
@@ -1031,7 +1114,7 @@ var SimpleLightbox = /*#__PURE__*/ function() {
                         fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left);
                     }
                     if (document.body.clientWidth < fullWindowWidth || this.isAppleDevice) {
-                        var paddingRight = parseInt(document.body.style.paddingRight || 0, 10);
+                        var paddingRight = parseInt(window.getComputedStyle(document.body).paddingRight || 0, 10);
                         scrollbarWidth = this.getScrollbarWidth();
                         document.body.dataset.originalPaddingRight = paddingRight;
                         if (scrollbarWidth > 0 || scrollbarWidth == 0 && this.isAppleDevice) {
@@ -1047,7 +1130,7 @@ var SimpleLightbox = /*#__PURE__*/ function() {
                     }
                 } else {
                     document.body.classList.remove("hidden-scroll");
-                    document.body.style.paddingRight = document.body.dataset.originalPaddingRight;
+                    document.body.style.paddingRight = document.body.dataset.originalPaddingRight + "px";
                     fixedElements.forEach(function(element) {
                         var padding = element.dataset.originalPaddingRight;
                         if (typeof padding !== "undefined") element.style.paddingRight = padding;
@@ -1135,6 +1218,7 @@ var SimpleLightbox = /*#__PURE__*/ function() {
                     _this4.isAnimating = true;
                     if (!_this4.isClosing) setTimeout(function() {
                         var element = _this4.relatedElements[_this4.currentImageIndex];
+                        if (!_this4.currentImage) return;
                         _this4.currentImage.setAttribute("src", element.getAttribute(_this4.options.sourceAttr));
                         if (_this4.loadedImages.indexOf(element.getAttribute(_this4.options.sourceAttr)) === -1) _this4.show(_this4.domNodes.spinner);
                         if (_this4.domNodes.image.contains(_this4.domNodes.caption)) _this4.domNodes.image.removeChild(_this4.domNodes.caption);
@@ -1300,7 +1384,7 @@ var SimpleLightbox = /*#__PURE__*/ function() {
                             _this6.controlCoordinates.initialOffsetX = parseFloat(_this6.currentImage.dataset.translateX);
                             _this6.controlCoordinates.initialOffsetY = parseFloat(_this6.currentImage.dataset.translateY);
                         }
-                        event.preventDefault();
+                        // event.preventDefault();
                         var delta = event.delta || event.wheelDelta;
                         if (delta === undefined) //we are on firefox
                         delta = event.detail;
@@ -1664,7 +1748,7 @@ var SimpleLightbox = /*#__PURE__*/ function() {
                     if (this.relatedElements.length == 1 && this.domNodes.wrapper.contains(this.domNodes.counter)) this.domNodes.wrapper.removeChild(this.domNodes.counter);
                     else if (this.relatedElements.length > 1 && !this.domNodes.wrapper.contains(this.domNodes.counter)) this.domNodes.wrapper.appendChild(this.domNodes.counter);
                 }
-                if (this.options.download) this.domNodes.wrapper.appendChild(this.domNodes.download);
+                if (this.options.download && this.domNodes.download) this.domNodes.wrapper.appendChild(this.domNodes.download);
                 this.isAnimating = true;
                 this.currentImageIndex = this.relatedElements.indexOf(element);
                 var targetURL = element.getAttribute(this.options.sourceAttr);
@@ -2070,88 +2154,6 @@ var _default = SimpleLightbox;
 exports["default"] = _default;
 global.SimpleLightbox = SimpleLightbox;
 
-},{}],"kaxSc":[function() {},{}],"ajlmC":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"9C7dK":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "galleryItems", ()=>galleryItems);
-const galleryItems = [
-    {
-        preview: "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg",
-        original: "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg",
-        description: "Hokkaido Flower"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg",
-        description: "Container Haulage Freight"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg",
-        description: "Aerial Beach View"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg",
-        description: "Flower Blooms"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg",
-        description: "Alpine Mountains"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg",
-        description: "Mountain Lake Sailing"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
-        description: "Alpine Spring Meadows"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
-        description: "Nature Landscape"
-    },
-    {
-        preview: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg",
-        original: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
-        description: "Lighthouse Coast Sea"
-    }
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ajlmC"}]},["2R6QA","6XVkV"], "6XVkV", "parcelRequire4c75")
+},{}],"kaxSc":[function() {},{}]},["9VJAZ","6XVkV"], "6XVkV", "parcelRequire4c75")
 
 //# sourceMappingURL=01-gallery.53390864.js.map

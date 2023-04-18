@@ -32,12 +32,3 @@ var lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250
 });
-
-lightbox.on('show.simplelightbox', function () {
-  // do something…
-  console.log('i love my dad !!  from kosula');
-});
-
-lightbox.on('error.simplelightbox', function (e) {
-  console.log(e); // some usefull information
-});
