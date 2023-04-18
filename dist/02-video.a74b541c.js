@@ -564,8 +564,8 @@ var _lodash = require("lodash");
 const iframe = document.querySelector("iframe");
 const player = new (0, _playerDefault.default)(iframe);
 console.log(player);
-player.on("timeupdate", (0, _lodash.throttle)(function(data) {
-    localStorage.setItem("videoplayer-current-time", data.seconds);
+player.on("timeupdate", (0, _lodash.throttle)(function(e) {
+    localStorage.setItem("videoplayer-current-time", e.seconds);
 }, 1000));
 const savedTime = localStorage.getItem("videoplayer-current-time");
 if (savedTime) player.setCurrentTime(savedTime);

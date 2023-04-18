@@ -7,8 +7,8 @@ console.log(player);
 
 player.on(
   'timeupdate',
-  throttle(function (data) {
-    localStorage.setItem('videoplayer-current-time', data.seconds);
+  throttle(function (e) {
+    localStorage.setItem('videoplayer-current-time', e.seconds);
   }, 1000)
 );
 const savedTime = localStorage.getItem('videoplayer-current-time');
